@@ -1,0 +1,37 @@
+$transition_duration: 500ms;
+$animation_duration: 500ms;
+$transition_timing_function: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Individual spacing variables
+$space-0: 0px;
+$space-1: 2px;
+$space-2: 4px;
+$space-3: 6px;
+$space-4: 8px;
+$space-5: 12px;
+$space-6: 16px;
+$space-7: 20px;
+$space-8: 24px;
+$space-9: 32px;
+$space-10: 40px;
+$space-11: 48px;
+$space-12: 64px;
+$space-13: 80px;
+
+// Map for easier access and iteration
+$space-scale: (
+  0: $space-0,
+  1: $space-1,
+  2: $space-2,
+  3: $space-3,
+  4: $space-4,
+  5: $space-5,
+  6: $space-6,
+  7: $space-7,
+  8: $space-8,
+  9: $space-9,
+  10: $space-10,
+  11: $space-11,
+  12: $space-12,
+  13: $space-13,
+);

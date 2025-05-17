@@ -1,0 +1,124 @@
+@use 'sass:math';
+@use "./functions" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./resets.scss";
+
+@include font-face("JetBrainsMono-Thin", "/fonts", thin, normal);
+@include font-face("JetBrainsMono-ThinItalic" "/fonts", thin, italic);
+@include font-face("JetBrainsMono-ExtraLight", "/fonts", extralight, normal);
+@include font-face("JetBrainsMono-ExtraLightItalic", "/fonts", extralight, italic);
+@include font-face("JetBrainsMono-Light", "/fonts", light, normal);
+@include font-face("JetBrainsMono-LightItalic", "/fonts", light, italic);
+@include font-face("JetBrainsMono-Regular", "/fonts", normal, normal);
+@include font-face("JetBrainsMono-Italic", "/fonts", normal, italic);
+@include font-face("JetBrainsMono-Medium", "/fonts", medium, normal);
+@include font-face("JetBrainsMono-MediumItalic", "/fonts", medium, italic);
+@include font-face("JetBrainsMono-SemiBold", "/fonts", semibold, normal);
+@include font-face("JetBrainsMono-SemiBoldItalic", "/fonts", semibold, italic);
+@include font-face("JetBrainsMono-Bold", "/fonts", bold, normal);
+@include font-face("JetBrainsMono-BoldItalic", "/fonts", bold, italic);
+@include font-face("JetBrainsMono-ExtraBold", "/fonts", extrabold, normal);
+@include font-face("JetBrainsMono-ExtraBoldItalic", "/fonts", extrabold, italic);
+@include font-face("JetBrainsMono-VariableFont_wght", "/fonts", 100 800, normal);
+@include font-face("JetBrainsMono-Italic-VariableFont_wght", "/fonts", 100 800, italic);
+
+$padding-inline: $space-4;
+
+:root {
+    --max-content-width: #{$max-content-width};
+
+    --space-0: #{$space-0};
+    --space-1: #{$space-1};
+    --space-2: #{$space-2};
+    --space-3: #{$space-3};
+    --space-4: #{$space-4};
+    --space-5: #{$space-5};
+    --space-6: #{$space-6};
+    --space-7: #{$space-7};
+    --space-8: #{$space-8};
+    --space-9: #{$space-9};
+    --space-10: #{$space-10};
+    --space-11: #{$space-11};
+    --space-12: #{$space-12};
+
+    --main-space-block: #{$space-6};
+    --header-padding-block: #{$space-4};
+    --paragraph-padding-block: #{$space-2};
+    --padding-inline: #{$padding-inline};
+
+    --radius: #{$radius};
+
+    --animation-duration: #{$transition_duration};
+    --transition-duration: #{$transition_duration};
+    --transition-timing-function: #{$transition_timing_function};
+}
+
+@include themify($themes) {
+    --red: #{color_in_theme("reed")};
+    color-scheme: $theme_name;
+    --primary: #{color_in_theme("primary")};
+    --primary-foreground: #{color_in_theme("primary-foreground")};
+    --secondary: #{color_in_theme("secondary")};
+    --secondary-foreground: #{color_in_theme("secondary-foreground")};
+    --accent: #{color_in_theme("accent")};
+    --accent-foreground: #{color_in_theme("accent-foreground")};
+    --destructive: #{color_in_theme("destructive")};
+    --destructive-foreground: #{color_in_theme("destructive-foreground")};
+    --background: #{color_in_theme("background")};
+    --lighter-background: #{color_in_theme("lighter-background")};
+    --text: #{color_in_theme("text")};
+    --link: #{color_in_theme("link")};
+    --input: #{color_in_theme("input")};
+    --ring: #{color_in_theme("ring")};
+    --skeleton: #{color_in_theme("skeleton")};
+    --skeleton-shimmer: #{color_in_theme("skeleton-shimmer")};
+    --border: #{color_in_theme("border")};
+    --warning: #{color_in_theme("warning")};
+    --warning-foreground: #{color_in_theme("warning-foreground")};
+    --info: #{color_in_theme("info")};
+    --info-foreground: #{color_in_theme("info-foreground")};
+    --success: #{color_in_theme("success")};
+    --success-foreground: #{color_in_theme("success-foreground")};
+    --muted: #{color_in_theme("muted")};
+    --muted-foreground: #{color_in_theme("muted-foreground")};
+}
+
+body {
+    --_min-height: calc(
+        100dvh - var(--main-space-block) * 2 - var(--header-padding-block) * 2
+    );
+
+    font-family: "JetBrains Mono", "Roboto", Arial, Helvetica, system-ui, sans-serif;
+    font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "ital" 0;
+
+    min-height: var(--_min-height);
+
+    color: hsl(var(--text) / var(--_text-opacity, 1));
+    background-color: hsl(var(--background) / var(--_background-opacity, 1));
+}
+
+.container {
+    max-width: $max-content-width - $padding-inline * 2;
+    margin: 0 auto;
+}
+
+main {
+    padding-block: var(--main-space-block);
+}
+
+header {
+    padding-block: var(--header-padding-block);
+}
+
+.sr-only {
+position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

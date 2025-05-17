@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "name": "Aaron Ragudos",
+        "description": "The owner of this portfolio",
+        "image": {
+            "src": "aaronragudos.jpg",
+            "alt": "Image of Aaron Ragudos",
+            "width": 200,
+            "height": 200
+        },
+        "socialLinks": [
+            {
+                "platform": "github",
+                "url": "https://github.com/Ragudos"
+            }
+        ]
+    }
+]
