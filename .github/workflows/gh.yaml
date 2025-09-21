@@ -15,16 +15,17 @@ jobs:
         with:
           fetch-depth: 0 # required to push to another branch
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10  # or match your project's pnpm version
+          run_install: false
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9 # change if you need a specific pnpm version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
