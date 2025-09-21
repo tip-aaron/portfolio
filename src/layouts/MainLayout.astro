@@ -1,0 +1,51 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import { ClientRouter } from "astro:transitions";
+import Wave from "@/components/Wave.astro";
+
+import "@/styles/index.css";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead />
+    <ClientRouter />
+    <script is:inline>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/workbox-sw.js", {
+            scope: "/",
+          })
+          .then((registration) => {
+            if (registration.installing) {
+              console.log("Service worker installing");
+            } else if (registration.waiting) {
+              console.log("Service worker installed");
+            } else if (registration.active) {
+              console.log("Service worker active");
+            }
+          })
+          .catch((error) => {
+            console.error(
+              `Registration of service worker failed with ${error}`
+            );
+          });
+      }
+    </script>
+    <script
+      is:inline
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="751b8319-bd50-46e8-a30b-58dc8d7ce523"></script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <Wave />
+  </body>
+</html>

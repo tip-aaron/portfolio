@@ -1,6 +1,11 @@
 {
-  "name": "",
+  "name": "@aaronragudos/portfolio",
+  "private": true,
   "type": "module",
+  "author": {
+    "name": "Aaron Ragudos",
+    "email": "qaamragudos@tip.edu.ph"
+  },
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -9,6 +14,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.9"
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.13.9",
+    "astro-compress": "^2.3.8"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "sharp": "^0.34.4",
+    "workbox-cli": "^7.3.0"
   }
 }

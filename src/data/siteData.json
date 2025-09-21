@@ -1,0 +1,18 @@
+{
+    "title": "Aaron Ragudos",
+    "description": "Hello! This here is my website portfolio! <3",
+    "socialLinks": [
+        {
+            "name": "Personal GitHub",
+            "url": "https://github.com/Ragudos"
+        },
+        {
+            "name": "School GitHub",
+            "url": "https://github.com/tip-aaron"
+        },
+        {
+            "name": "YouTube",
+            "url": "http://www.youtube.com/@com-ffee"
+        }
+    ]
+}

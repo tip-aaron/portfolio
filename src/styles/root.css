@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+
+  --clr-background: 253, 224, 224;
+  --clr-foreground: 33, 14, 14;
+  --clr-primary: 238, 105, 105;
+  --clr-secondary: 249, 124, 124;
+  --clr-accent: 253, 170, 170;
+
+  --fs-h1: 2.986rem;
+  --fs-h2: 2.488rem;
+  --fs-h3: 2.074rem;
+  --fs-h4: 1.728rem;
+  --fs-h5: 1.44rem;
+  --fs-h6: 1.2rem;
+  --fs-p: 1rem;
+  --fs-sm: 0.833rem;
+  --fs-xs: 0.694rem;
+
+  --space-0: 0.25rem;
+  --space-1: 0.333rem;
+  --space-2: 0.444rem;
+  --space-3: 0.593rem;
+  --space-4: 0.79rem;
+  --space-5: 1.054rem;
+  --space-6: 1.405rem;
+  --space-7: 1.873rem;
+  --space-8: 2.497rem;
+  --space-9: 3.33rem;
+  --space-10: 4.437rem;
+  --space-11: 5.916rem;
+  --space-12: 7.888rem;
+
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-6);
+  --space-xl: var(--space-8);
+
+  --radius: 1rem;
+
+  --max-content-width: 80rem;
+  --padding-inline: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+  :root {
+    --fs-h1: 3.815rem;
+    --fs-h2: 3.052rem;
+    --fs-h3: 2.441rem;
+    --fs-h4: 1.953rem;
+    --fs-h5: 1.563rem;
+    --fs-h6: 1.25rem;
+    --fs-p: 1rem;
+    --fs-sm: 0.8rem;
+    --fs-xs: 0.64rem;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  :root {
+    --fs-h1: 5.61rem;
+    --fs-h2: 4.209rem;
+    --fs-h3: 3.157rem;
+    --fs-h4: 2.369rem;
+    --fs-h5: 1.777rem;
+    --fs-h6: 1.333rem;
+    --fs-p: 1rem;
+    --fs-sm: 0.75rem;
+    --fs-xs: 0.563rem;
+  }
+}
