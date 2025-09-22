@@ -12,7 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postbuild": "workbox generateSW workbox-config.js"
+    "postbuild": "workbox generateSW workbox-config.cjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
