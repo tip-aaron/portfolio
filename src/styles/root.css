@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
 
-  --clr-background: 253, 224, 224;
+  --clr-background: 255, 149, 79;
   --clr-foreground: 33, 14, 14;
   --clr-primary: 238, 105, 105;
   --clr-secondary: 249, 124, 124;
-  --clr-accent: 253, 170, 170;
+  --clr-accent: 255, 180, 73;
 
   --fs-h1: 2.986rem;
   --fs-h2: 2.488rem;
