@@ -1,5 +1,21 @@
 ---
 import ContentLayout from "@/layouts/ContentLayout.astro";
+import { getEntryBySlug, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post }, // optional, you can also fetch inside frontmatter
+  }));
+}
+
+const { post } = Astro.props;
 ---
 
-<ContentLayout />
+<ContentLayout>
+  <h1>{post.data.title}</h1>
+  <p>{post.data.description}</p>
+  <img src={post.data.image} alt={post.data.title} />
+  <p>By {post.data.author} on {post.data.publishedOn.toDateString()}</p>
+</ContentLayout>

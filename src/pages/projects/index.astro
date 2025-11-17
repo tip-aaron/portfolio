@@ -1,9 +1,56 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects"))
+  .filter((item) => !item.data.draft)
+  .sort((a, b) => b.data.publishedOn.getTime() - a.data.publishedOn.getTime());
 ---
 
 <MainLayout>
   <h1>Projects</h1>
+  <ul>
+    {
+      projects.map(({ data }) => {
+        return (
+          <li>
+            <img
+              loading="lazy"
+              decoding="async"
+              src={data.image}
+              alt={data.title}
+            />
+
+            <div class="content">
+              <div class="h4">{data.title}</div>
+              {data.description && <p>{data.description}</p>}
+              <a
+                class="link"
+                href={data.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div>View Project</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="size-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
 </MainLayout>
 
 <style>
@@ -13,7 +60,19 @@ import MainLayout from "@/layouts/MainLayout.astro";
 
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 2rem;
+  }
+
+  li {
+    padding: 1rem;
+
+    border-radius: 1rem;
+
+    border: 1px solid black;
+
+    a {
+      margin-top: 0.75em;
+    }
   }
 </style>

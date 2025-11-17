@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import compress from "astro-compress";
 
@@ -12,12 +12,10 @@ export default defineConfig({
   site: "https://aaronragudos.website",
   integrations: [sitemap(), compress()],
   vite: {
-      css: {
-          postcss: {
-              plugin: [
-                  autoprefixer()
-              ]
-          }
-      }
-  }
+    css: {
+      postcss: {
+        plugins: [autoprefixer()],
+      },
+    },
+  },
 });
