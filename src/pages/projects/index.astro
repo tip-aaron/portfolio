@@ -60,7 +60,7 @@ const projects = (await getCollection("projects"))
 
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(27.5rem, 1fr));
     gap: 2rem;
   }
 
@@ -70,9 +70,9 @@ const projects = (await getCollection("projects"))
     border-radius: 1rem;
 
     border: 1px solid black;
+  }
 
-    a {
-      margin-top: 0.75em;
-    }
+  li a {
+    margin-top: 0.75em;
   }
 </style>
