@@ -2,11 +2,6 @@ backend:
   name: github
   repo: tip-aaron/portfolio  # <-- change this
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: oauth
-  allowed_users:
-    - tip-aaron
-    - Ragudos
 
 media_folder: "public/uploads"      # where uploaded files go
 public_folder: "/uploads"           # served URL
