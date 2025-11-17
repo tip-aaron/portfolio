@@ -1,0 +1,19 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <h1>Projects</h1>
+</MainLayout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 1.5rem;
+  }
+</style>

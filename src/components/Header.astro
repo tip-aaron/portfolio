@@ -1,5 +1,63 @@
 ---
-
+import siteData from "@/data/siteData.json";
 ---
 
-<header></header>
+<header>
+  <div class="container">
+    <ul>
+      {
+        siteData.navLinks.map((link) => {
+          const isCurrent =
+            Astro.url.pathname === "/" && link.name === "Home"
+              ? true
+              : Astro.url.pathname.includes(link.name.toLowerCase());
+
+          return (
+            <li>
+              <a
+                aria-current={isCurrent}
+                title={`Go to ${Astro.url.origin}${link.url}`}
+                href={link.url}
+              >
+                {link.name}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</header>
+
+<style>
+  header {
+    padding-block: 1rem;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+  }
+
+  a {
+    opacity: 0.75;
+
+    transition: 0.25s;
+
+    will-change: opacity;
+
+    text-underline-offset: 0.25rem;
+
+    &:hover,
+    &[aria-current="true"] {
+      opacity: 1;
+
+      text-decoration-style: wavy;
+      text-decoration-line: underline;
+      text-decoration-color: black;
+      text-decoration-thickness: 0.025rem;
+    }
+  }
+</style>

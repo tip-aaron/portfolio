@@ -54,9 +54,7 @@ img {
   object-position: center;
 }
 
-li:not([class]),
-p:not([class]),
-ul:not([class]) {
+p:not([class]) {
   max-width: 60ch;
 }
 
@@ -64,4 +62,9 @@ ul:not([class]) {
   width: min(calc(100% - var(--padding-inline) * 2), var(--max-content-width));
 
   margin-inline: auto;
+}
+
+.size-4 {
+  width: 16px;
+  height: 16px;
 }

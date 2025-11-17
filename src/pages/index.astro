@@ -10,7 +10,12 @@ import MainLayout from "@/layouts/MainLayout.astro";
       {
         siteData.socialLinks.map((link) => (
           <span>
-            <a class="link" href={link.url} target="_blank">
+            <a
+              class="link"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {link.name}
             </a>{" "}
             |
