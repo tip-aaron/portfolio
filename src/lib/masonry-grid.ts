@@ -30,8 +30,6 @@ function initMasonry() {
 
   if (masonry) {
     masonry.once?.("layoutComplete", (items: any[]) => {
-      // @ts-ignore
-      document.querySelector(".loader")!.setAttribute("aria-hidden", "true");
       items.forEach((item) => {
         item.element.setAttribute("data-finished", "true");
       });

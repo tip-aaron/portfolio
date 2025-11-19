@@ -4,8 +4,10 @@ h1 {
 
 .grid {
   width: 100%;
+
   gap: var(--space-6);
   margin-inline: auto;
+  margin-bottom: auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -20,9 +22,6 @@ h1 {
   margin-bottom: var(--space-6);
 
   transition: opacity 0.25s ease, visibility 0.25s ease;
-
-  opacity: 0;
-  visibility: hidden;
 
   display: flex;
   flex-direction: column;
@@ -69,9 +68,4 @@ h1 {
   .grid-item {
     width: 20.33vw;
   }
-}
-
-.grid-item[data-finished="true"] {
-  opacity: 1;
-  visibility: visible;
 }

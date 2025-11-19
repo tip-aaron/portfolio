@@ -12,7 +12,6 @@ const projects = (await getCollection("projects"))
 
 <MainLayout>
   <h1>Projects</h1>
-  <Spinner />
   <ul class="grid" id="grid">
     {
       projects.map(({ data }) => {

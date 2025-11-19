@@ -12,7 +12,6 @@ const certifications = (await getCollection("certifications"))
 
 <MainLayout>
   <h1>Certifications</h1>
-  <Spinner />
   <ul class="grid" id="grid">
     {
       certifications.map(({ data }) => {
