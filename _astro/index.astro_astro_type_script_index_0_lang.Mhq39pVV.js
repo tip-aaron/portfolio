@@ -1,1 +1,0 @@
-import"./index.astro_astro_type_script_index_0_lang.Ba8XNq6r.js";
