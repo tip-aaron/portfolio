@@ -1,6 +1,6 @@
 ---
 import Link from "@/components/Link.astro";
-import Spinner from "@/components/loader/spinner.astro";
+import Spinner from "@/components/loader/Spinner.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 
 import { getCollection } from "astro:content";
@@ -11,30 +11,33 @@ const certifications = (await getCollection("certifications"))
 ---
 
 <MainLayout>
-  <h1>Certifications</h1>
-  <ul class="grid" id="grid">
-    {
-      certifications.map(({ data }) => {
-        return (
-          <li class="grid-item">
-            <img
-              loading="lazy"
-              decoding="async"
-              src={data.image}
-              alt={data.title}
-            />
-            <div class="content">
-              <div class="h5">{data.title}</div>
-              {data.description && <p>{data.description}</p>}
-              <Link href={data.link}>
-                <div>View Certification</div>
-              </Link>
-            </div>
-          </li>
-        );
-      })
-    }
-  </ul>
+  <div class="wrapper">
+    <h1>Certifications</h1>
+    <Spinner />
+    <ul class="grid" id="grid">
+      {
+        certifications.map(({ data }) => {
+          return (
+            <li class="grid-item">
+              <img
+                loading="lazy"
+                decoding="async"
+                src={data.image}
+                alt={data.title}
+              />
+              <div class="content">
+                <div class="h5">{data.title}</div>
+                {data.description && <p>{data.description}</p>}
+                <Link href={data.link}>
+                  <div>View Certification</div>
+                </Link>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
 </MainLayout>
 
 <script src="@/lib/masonry-grid.ts"></script>

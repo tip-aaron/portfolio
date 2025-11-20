@@ -1,3 +1,7 @@
+.wrapper {
+  position: relative;
+}
+
 h1 {
   text-align: center;
 }
@@ -23,9 +27,17 @@ h1 {
 
   transition: opacity 0.25s ease, visibility 0.25s ease;
 
+  opacity: 0;
+  visibility: hidden;
+
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+}
+
+.grid-item[data-finished="true"] {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media only screen and (min-width: 500px) {

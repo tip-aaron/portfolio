@@ -37,10 +37,6 @@ body {
   color: rgb(var(--clr-foreground));
 }
 
-header {
-  margin-bottom: auto;
-}
-
 main {
   padding-block: var(--padding-inline);
 }

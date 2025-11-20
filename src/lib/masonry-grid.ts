@@ -29,7 +29,10 @@ function initMasonry() {
   });
 
   if (masonry) {
+    masonry?.layout?.();
+
     masonry.once?.("layoutComplete", (items: any[]) => {
+      document.querySelector(".loader")!.setAttribute("aria-hidden", "true");
       items.forEach((item) => {
         item.element.setAttribute("data-finished", "true");
       });
