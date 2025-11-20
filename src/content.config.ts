@@ -21,7 +21,7 @@ const certifications = defineCollection({
     z.object({
       title: z.string(),
       description: z.optional(z.string()),
-      image: z.string(),
+      image: image(),
       link: z.string().url(),
       publishedOn: z.date(),
       updatedOn: z.date().optional(),
@@ -31,15 +31,16 @@ const certifications = defineCollection({
 
 const projects = defineCollection({
   loader: glob({ base: "src", pattern: "./content/projects/**/*.md" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.optional(z.string()),
-    image: z.string(),
-    link: z.string().url(),
-    publishedOn: z.date(),
-    updatedOn: z.date().optional(),
-    draft: z.boolean().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.optional(z.string()),
+      image: image(),
+      link: z.string().url(),
+      publishedOn: z.date(),
+      updatedOn: z.date().optional(),
+      draft: z.boolean().optional(),
+    }),
 });
 
 export const collections = { blog, certifications, projects };

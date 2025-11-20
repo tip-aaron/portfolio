@@ -6,10 +6,10 @@ import MainLayout from "@/layouts/MainLayout.astro";
 <MainLayout>
   <h1>Aaron Ragudos</h1>
   <div>
-    <span>
+    <ul class="links">
       {
         siteData.socialLinks.map((link) => (
-          <span>
+          <li>
             <a
               class="link"
               href={link.url}
@@ -17,24 +17,36 @@ import MainLayout from "@/layouts/MainLayout.astro";
               rel="noopener noreferrer"
             >
               {link.name}
-            </a>{" "}
-            |
-          </span>
+            </a>
+          </li>
         ))
       }
-    </span>
+    </ul>
     <span> me@aaronragudos.website </span>
   </div>
-  <style>
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    h1,
-    div {
-      text-align: center;
-    }
-  </style>
 </MainLayout>
+<style>
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    column-gap: 0.25rem;
+  }
+
+  .links li:not(:last-child)::after {
+    content: " | ";
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1,
+  div {
+    text-align: center;
+  }
+</style>

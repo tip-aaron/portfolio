@@ -39,8 +39,9 @@
 
   --radius: 1rem;
 
-  --max-content-width: 80rem;
+  --max-content-width: 90rem;
   --padding-inline: 1rem;
+  --card-width: 30rem;
 }
 
 @media screen and (min-width: 40em) {
@@ -57,6 +58,12 @@
   }
 }
 
+@media screen and (min-width: 50em) {
+  :root {
+    --card-width: 20rem;
+  }
+}
+
 @media screen and (min-width: 65em) {
   :root {
     --fs-h1: 5.61rem;
@@ -68,5 +75,6 @@
     --fs-p: 1rem;
     --fs-sm: 0.75rem;
     --fs-xs: 0.563rem;
+    --card-width: 28rem;
   }
 }

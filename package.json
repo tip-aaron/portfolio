@@ -19,9 +19,7 @@
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.15.8",
     "astro-compress": "^2.3.8",
-    "imagesloaded": "^5.0.0",
     "markdown-it": "^14.1.0",
-    "masonry-layout": "^4.2.2",
     "sanitize-html": "^2.17.0"
   },
   "devDependencies": {

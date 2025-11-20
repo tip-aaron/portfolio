@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+
+  gap: var(--space-5);
+}
+
+@media only screen and (min-width: 50em) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 80em) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grid-item a {
+  margin-top: var(--space-3);
+}
+
+.grid-item .h5 {
+  margin-top: var(--space-2);
+}

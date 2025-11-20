@@ -30,7 +30,11 @@
     },
     {
       "name": "YouTube",
-      "url": "http://www.youtube.com/@hinode_codes"
+      "url": "https://www.youtube.com/@hinode_codes"
+    },
+    {
+      "name": "Frontend Mentor",
+      "url": "https://www.frontendmentor.io/profile/Ragudos"
     }
   ]
 }

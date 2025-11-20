@@ -9,7 +9,7 @@
 html {
   text-rendering: optimizeSpeed;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   letter-spacing: -0.5px;
 }
 
@@ -177,8 +177,9 @@ ol:not([role="list"]) {
 
 img {
   max-width: 100%;
-  width: 100%;
-  vertical-align: middle;
+  vertical-align: bottom;
+
+  height: auto;
 }
 
 input,
