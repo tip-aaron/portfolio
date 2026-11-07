@@ -9,7 +9,7 @@ import autoprefixer from "autoprefixer";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://aaronragudos.website",
+  site: "https://tip-aaron.github.io/portfolio",
   integrations: [sitemap(), compress()],
   vite: {
     css: {
